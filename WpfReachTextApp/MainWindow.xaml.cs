@@ -45,5 +45,23 @@ namespace WpfReachTextApp
                 }
             }
         }
+
+        private void BoldButton_Click(object sender, RoutedEventArgs e)
+        {
+            var selectedText = new TextRange(docBox.Selection.Start, docBox.Selection.End);
+            selectedText.ApplyPropertyValue(RichTextBox.FontWeightProperty, FontWeights.Bold);
+        }
+
+        private void ItalicButton_Click(object sender, RoutedEventArgs e)
+        {
+            var selectedText = new TextRange(docBox.Selection.Start, docBox.Selection.End);
+            selectedText.ApplyPropertyValue(RichTextBox.FontStyleProperty, FontStyles.Italic);
+        }
+
+        private void SizeButton_Click(object sender, RoutedEventArgs e)
+        {
+            var selectedText = new TextRange(docBox.Selection.Start, docBox.Selection.End);
+            selectedText.ApplyPropertyValue(RichTextBox.FontSizeProperty, 50.0);
+        }
     }
 }

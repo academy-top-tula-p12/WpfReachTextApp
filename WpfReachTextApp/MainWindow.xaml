@@ -12,6 +12,18 @@
             <Setter Property="Padding" Value="20 10"/>
             <Setter Property="FontSize" Value="24"/>
         </Style>
+
+        <Style TargetType="{x:Type Button}" x:Key="formatTextStyle">
+            <Setter Property="FontFamily" Value="Palatino Linotype"></Setter>
+            <Setter Property="Width" Value="30"></Setter>
+            <Setter Property="FontSize" Value ="14"></Setter>
+            <Setter Property="CommandTarget" Value="{Binding ElementName=mainRTB}"></Setter>
+        </Style>
+
+        <Style TargetType="{x:Type Button}" x:Key="formatImageStyle">
+            <Setter Property="Width" Value="30"></Setter>
+            <Setter Property="CommandTarget" Value="{Binding ElementName=mainRTB}"></Setter>
+        </Style>
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -26,6 +38,16 @@
         <StackPanel 
             Orientation="Horizontal"
             Grid.Row="2">
+            <!--<Button Click="BoldButton_Click">Bold</Button>-->
+            <Button Click="BoldButton_Click">
+                <TextBlock FontWeight="Bold">B</TextBlock>
+            </Button>
+            <Button Click="ItalicButton_Click">
+                <TextBlock FontStyle="Italic">I</TextBlock>
+            </Button>
+            <Button Click="SizeButton_Click">
+                <TextBlock>30</TextBlock>
+            </Button>
             <Button Click="OpenButton_Click">Open</Button>
             <Button>Save</Button>
         </StackPanel>
